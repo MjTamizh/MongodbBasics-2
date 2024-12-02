@@ -187,7 +187,8 @@ db.students.find({ $expr: { $not: { $eq: ["$highestMark", { $max: "$marks" }] } 
 #### Array Operators (elemMatch,all,size,push,addToSet,pop,pull,unwind)
 
 ```bash
-db.students.find({ marks: { $elemMatch: { $gt: 80 } } });
+db.students.find({ marks: { $elemMatch: { $gt: 80, $lt: 90 } } });
+
 ```
 ```bash
 db.students.find({ marks: { $all: [75, 85] } });
