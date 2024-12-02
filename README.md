@@ -128,6 +128,16 @@ db.students.find({ marks: { $nin: [72, 90] } });
 ```bash
 db.students.find({ $and: [{age: 18 },{marks:{$gt:80}}] });
 ```
+
+```bash
+db.students.find({ $or: [ { age: 18 }, { marks: { $gt: 80 } } ] });
+```
+```bash
+db.students.find({ $nor: [ { age: 18 }, { marks: { $gt: 80 } } ] });
+```
+```bash
+db.students.find({ $and: [{age: 18 },{marks:{$gt:80}}] });
+```
   
 
 
