@@ -2,7 +2,8 @@
 
 ## MongoDB Basic Course - 1 part -2 
   1. Advance search
-  2. Schema validation 
+  2. Schema validation
+  3. Operators
 
 
 ### Advance search
@@ -88,6 +89,40 @@ db.runCommand({
 });
 
 ```
+
+### Operators
+  #### Comparison Operators ()
+  
+   ```bash
+  db.students.find({ age: { $eq: 18 } });
+  ```
+  ```bash
+db.students.find({ age: { $ne: 18 } });
+  ```
+   ```bash
+db.students.find({ marks: { $gt: 80 } });
+
+  ```
+   ```bash
+db.students.find({ marks: { $gte: 85 } });
+
+  ```
+   ```bash
+db.students.find({ age: { $lt: 20 } });
+  ```
+   ```bash
+db.students.find({ marks: { $lte: 75 } });
+  ```
+     ```bash
+     db.students.find({ marks: { $in: [72, 90] } });
+  ```
+
+     ```bash
+db.students.find({ marks: { $nin: [72, 90] } });
+
+  ```
+  
+
 
 
 
