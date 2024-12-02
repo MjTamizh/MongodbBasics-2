@@ -147,7 +147,7 @@ db.students.find({ $or: [ { age: 18 }, { marks: { $gt: 85 } } ], $not: { marks: 
 db.students.find({age: { $ne: 18 }, $or: [ { marks: { $gte: 72 } }, { marks: { $gt: 80 } } ] });
 ```
 
-#### Element Operators (exists,type,jsonSchema)
+#### Element Operators (exists, type, JSON schema)
 
 ```bash
 db.students.find({ age: { $exists: true } });
