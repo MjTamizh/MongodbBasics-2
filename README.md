@@ -103,21 +103,21 @@ db.students.find({ age: { $ne: 18 } });
 db.students.find({ marks: { $gt: 80 } });
 
   ```
-   ```bash
+ ```bash
 db.students.find({ marks: { $gte: 85 } });
 
-  ```
-   ```bash
+```
+ ```bash
 db.students.find({ age: { $lt: 20 } });
   ```
-   ```bash
+```bash
 db.students.find({ marks: { $lte: 75 } });
   ```
-     ```bash
+```bash
      db.students.find({ marks: { $in: [72, 90] } });
   ```
 
-     ```bash
+```bash
 db.students.find({ marks: { $nin: [72, 90] } });
 
   ```
