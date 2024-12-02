@@ -122,13 +122,12 @@ db.students.find({ marks: { $nin: [72, 90] } });
 ```
 
 
-  #### Logical Operators (and,or,nor,not)
+  #### Logical Operators (and,or,nor,not )
 
 
 ```bash
 db.students.find({ $and: [{age: 18 },{marks:{$gt:80}}] });
 ```
-
 ```bash
 db.students.find({ $or: [ { age: 18 }, { marks: { $gt: 80 } } ] });
 ```
@@ -136,8 +135,18 @@ db.students.find({ $or: [ { age: 18 }, { marks: { $gt: 80 } } ] });
 db.students.find({ $nor: [ { age: 18 }, { marks: { $gt: 80 } } ] });
 ```
 ```bash
-db.students.find({ $and: [{age: 18 },{marks:{$gt:80}}] });
+db.students.find({ marks: { $not: { $gt: 80 } } });
 ```
+
+#### Combining Logical Operators
+
+```bash
+db.students.find({ $or: [ { age: 18 }, { marks: { $gt: 85 } } ], $not: { marks: { $lt: 75 } } });
+```
+```bash
+db.students.find({age: { $ne: 18 }, $or: [ { marks: { $gte: 72 } }, { marks: { $gt: 80 } } ] });
+```
+
   
 
 
