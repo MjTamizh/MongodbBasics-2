@@ -114,7 +114,7 @@ db.students.find({ age: { $lt: 20 } });
 db.students.find({ marks: { $lte: 75 } });
   ```
 ```bash
-     db.students.find({ marks: { $in: [72, 90] } });
+ db.students.find({ marks: { $in: [72, 90] } });
   ```
 
 ```bash
