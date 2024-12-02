@@ -1,4 +1,4 @@
-# MongoDB-Basics 2
+# MongoDB-Basics
 
 ## MongoDB Basic Course - 1 part -2 
   1. Advance search
