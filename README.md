@@ -15,3 +15,8 @@ db.students.find({ name: "tamil" }, { age: 1, _id: 0 })
 ```bash
 db.students.find({ "address.postCode": 607302 })
 ```
+
+#### find distinct value
+```bash
+db.students.distinct("address.postCode")
+```
