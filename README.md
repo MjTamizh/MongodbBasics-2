@@ -160,13 +160,35 @@ db.students.find({ marks: { $type: "int" } });
 db.students.find({ marks: { $jsonSchema: { bsonType: "int", minimum: 80 } } });
 ```
 
-  
+#### Array Operators (elemMatch,all,size,push,addToSet,pop,pull,unwind)
 
+```bash
+db.students.find({ marks: { $elemMatch: { $gt: 80, $lt: 90 } } });
+```
+```bash
+db.students.find({ marks: { $all: [75, 85] } });
+```
 
+```bash
+db.students.find({ marks: { $size: 3 } });
+```
+```bash
+db.students.updateOne({ name: "Alice" }, { $push: { marks: 95 } });
+```
+```bash
+db.students.updateOne({ name: "Alice" }, { $addToSet: { marks: 95 } });
+```
 
+```bash
+db.students.updateOne({ name: "Alice" }, { $pop: { marks: 1 } });
+```
+```bash
+db.students.updateOne({ name: "Alice" }, { $pop: { marks: -1 } });
+```
+```bash
+db.students.updateOne({ name: "Alice" }, { $pull: { marks: { $lt: 80 } } });
+```
 
-
-
-
-
-
+```bash
+db.students.aggregate([ { $unwind: "$marks" } ]);
+```
