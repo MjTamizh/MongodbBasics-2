@@ -163,7 +163,7 @@ db.students.find({ marks: { $jsonSchema: { bsonType: "int", minimum: 80 } } });
 #### Array Operators (elemMatch,all,size,push,addToSet,pop,pull,unwind)
 
 ```bash
-db.students.find({ marks: { $elemMatch: { $gt: 80, $lt: 90 } } });
+db.students.find({ marks: { $elemMatch: { $gt: 80 } } });
 ```
 ```bash
 db.students.find({ marks: { $all: [75, 85] } });
