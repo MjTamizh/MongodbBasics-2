@@ -119,8 +119,10 @@ db.students.find({ marks: { $lte: 75 } });
 
 ```bash
 db.students.find({ marks: { $nin: [72, 90] } });
+```
 
-  ```
+
+  #### Logical Operators (and,or,nor,not)
   
 
 
