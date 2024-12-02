@@ -91,7 +91,7 @@ db.runCommand({
 ```
 
 ### Operators
-  #### Comparison Operators ()
+  #### Comparison Operators (eq,ne,gt,get,lt,let,in,nin)
   
    ```bash
   db.students.find({ age: { $eq: 18 } });
