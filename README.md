@@ -147,7 +147,7 @@ db.students.find({ $or: [ { age: 18 }, { marks: { $gt: 85 } } ], $not: { marks: 
 db.students.find({age: { $ne: 18 }, $or: [ { marks: { $gte: 72 } }, { marks: { $gt: 80 } } ] });
 ```
 
-#### Element Operators (exists, type, JSON schema)
+#### Element Operators (exists, type, JSON schema,expr)
 
 ```bash
 db.students.find({ age: { $exists: true } });
@@ -158,6 +158,30 @@ db.students.find({ marks: { $type: "int" } });
 
 ```bash
 db.students.find({ marks: { $jsonSchema: { bsonType: "int", minimum: 80 } } });
+```
+
+```bash
+db.students.find({ $expr: { $gt: ["$highestMark", { $avg: "$marks" }] } });
+```
+```bash
+db.students.find({ $expr: { $eq: ["$highestMark", { $max: "$marks" }] } });
+
+```
+```bash
+db.students.find({ $expr: { $and: [{ $gt: ["$highestMark", 85] }, { $lt: ["$age", 19] }] } });
+
+```
+```bash
+db.students.find({ $expr: { $or: [{ $gt: ["$highestMark", 90] }, { $eq: ["$age", 20] }] } });
+
+```
+```bash
+db.students.find({ $expr: { $gt: [{ $arrayElemAt: ["$marks", 0] }, 70] } });
+
+```
+```bash
+db.students.find({ $expr: { $not: { $eq: ["$highestMark", { $max: "$marks" }] } } });
+
 ```
 
 #### Array Operators (elemMatch,all,size,push,addToSet,pop,pull,unwind)
