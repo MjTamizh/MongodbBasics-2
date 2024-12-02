@@ -3,7 +3,7 @@
 ## MongoDB Basic Course - 1 part -2 
   1. Advance search
   2. Schema validation
-  3. Operators
+  3. Operators (Comparison Operators , Logical Operators , Combining Logical Operators , Element Operators , Array Operators)
 
 
 ### Advance search
