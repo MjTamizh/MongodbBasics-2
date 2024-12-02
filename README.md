@@ -123,6 +123,11 @@ db.students.find({ marks: { $nin: [72, 90] } });
 
 
   #### Logical Operators (and,or,nor,not)
+
+
+```bash
+db.students.find({ $and: [{age: 18 },{marks:{$gt:80}}] });
+```
   
 
 
